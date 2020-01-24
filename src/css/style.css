@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+    min-width: 100vh;
+    width: 100%;
+}
+
+.row-navbar {
+    background-color: #0d3f67;
+}
+
+.navbar a {
+    color: white;
+}
+
+.jumbotron-bg {
+    height: 90%;
+    background: url(../img/pileta.png) no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.content-align {
+    margin-top: 20%;
+}
+
+.carousel-caption {
+    background: linear-gradient(rgba(102, 102, 255, .7), rgba(102, 153, 153, .5));
+}
+
+.jumbotron-info {
+    background: #6b48ff;
+    color: white;
+}
+
+.container-img {
+    background: url(../img/fondo.png);
+    color: white;
+}
+
+.img-button-instalaciones {
+    min-height: 10em;
+    min-width: auto;
+    max-height: 20em;
+    max-width: auto;
+    height: 10em;
+}
+
+/* kdlsk */
+
+.text-btn-instalaciones {
+    color: white;
+}
+
+.btn-instalaciones:hover {
+    transform: scale(1.2);
+    text-decoration: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+.card-img-overlay {
+    color: white;
+}
+
+.card .card-img {
+    min-width: 90px;
+}
+
+@media (min-width: 768px) {
+    .galery.card-columns {
+        -webkit-column-count: 5;
+        -moz-column-count: 5;
+        column-count: 5;
+    }
+}
+@media (min-width: 768px) {
+    .especificacion.card-columns {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+    }
+}
+.especificacion .card {
+    border: none;
+}
+
+.card-tumbail {
+    width: 100px;
+    /* border-radius: 50%; */
+}
+.card .image {
+    background-color: red;
+    border-radius: 50%;
+}
+
+.especificacion .list-group-item {
+    border: none;
+    padding: 0px;
+}
