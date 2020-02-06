@@ -5,6 +5,18 @@ html, body {
     min-width: 100vh;
     width: 100%;
 }
+.bg-primary {
+    background-color: #6b48ff !important;
+}
+.bg-secondary {
+    background-color: #1ee3cf !important;
+}
+#mapid {
+    width: auto;
+    height: 100%;
+    min-height: 400px;
+    min-width: auto;
+}
 
 .row-navbar {
     background-color: #0d3f67;
@@ -40,11 +52,11 @@ html, body {
 }
 
 .img-button-instalaciones {
-    min-height: 10em;
+    min-height: 5em;
     min-width: auto;
-    max-height: 20em;
+    max-height: 10em;
     max-width: auto;
-    height: 10em;
+    height: 5em;
 }
 
 /* kdlsk */
@@ -56,10 +68,6 @@ html, body {
 .btn-instalaciones:hover {
     transform: scale(1.2);
     text-decoration: none;
-}
-
-.show {
-    display: inline-block;
 }
 
 .card-img-overlay {
@@ -76,28 +84,76 @@ html, body {
         -moz-column-count: 5;
         column-count: 5;
     }
-}
-@media (min-width: 768px) {
-    .especificacion.card-columns {
+    .especificacion.card-columns.pileta {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+    }
+    .especificacion.card-columns.quincho,
+     .especificacion.card-columns.espacios,
+     .especificacion.card-columns.cabanas,
+     .more-information {
         -webkit-column-count: 4;
         -moz-column-count: 4;
         column-count: 4;
     }
 }
-.especificacion .card {
+
+@media (max-width: 768px) {
+    .galery.card-columns, .especificacion.card-columns.cabanas, 
+    .especificacion.card-columns.pileta, .especificacion.card-columns.quincho, 
+    .especificacion.card-columns.espacios,.more-information.card-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+.especificacion .card, .more-information .card {
     border: none;
 }
 
 .card-tumbail {
     width: 100px;
-    /* border-radius: 50%; */
 }
+
 .card .image {
     background-color: red;
     border-radius: 50%;
 }
 
-.especificacion .list-group-item {
+.especificacion .list-group-item, .more-information .list-group-item,
+.info-contact .card, .info-contact .list-group-item {
     border: none;
     padding: 0px;
+}
+
+.location-info {
+    background-color: #6b48ff;
+    color: white;
+}
+.info-contact {
+    background-color: #1ee3cf;
+}
+
+
+
+.location-info .mapa {
+    padding: 0;
+}
+
+.locator-image {
+    width: 100px;
+}
+
+.image-contact {
+    /* height: 90px; */
+    background: url(../img/contact-image.png) no-repeat;
+    background-size: cover;
+}
+
+
+.info-contact .card, .info-contact .list-group-item {
+    background-color: transparent;
+    
 }

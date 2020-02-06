@@ -1,11 +1,21 @@
-filterSelection("all");
 
+filterSelection("all");
 function filterSelection(c) {
-    var x, i, e;
+    var x, i, n, e;
+    var especificacion_type = ['cabanas', 'pileta','quincho','espacios']
+
     x = document.getElementsByClassName("card");
     e = document.getElementsByClassName("especificacion")
-    w3RemoveClass(e[0], "d-block")
-    if (e[0].className.indexOf(c) > -1) w3AddClass(e[0],"d-block");
+    n = especificacion_type.indexOf(c)
+    console.log(n);
+    console.log(c);
+
+    for (let i = 0; i < e.length; i++) {
+        let element = e[i];
+        w3RemoveClass(element, "d-block")
+    }
+
+    (n > -1) ? w3AddClass(e[n],"d-block") : w3AddClass(e[0],"d-block") ;
     
     if (c == "all") c = "";
     // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected

@@ -3,11 +3,16 @@
 
     <head>
         <meta charset="UTF-8">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
+        <!-- ESTO ES PARA INCLUIR EL MAPA EN EL SITIO -->
+        <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+
         <title>Cabañas Ñasaindy</title>
     </head>
 
@@ -118,46 +123,52 @@
                 </div>
             </div>
             <div class="row mt-5 justify-content-center">
-                <div class="col col-md-8  mb-5">
-                    <a href="#cabaña" type='button' class="ml-5 btn-instalaciones" onclick="filterSelection('cabanas')">
-                        <img class="img-button-instalaciones" src="./img/icons/house.png" alt="Cabaña">
+                <div class="col col-md-8  mb-5 text-center">
+
+                    <a type='button' class="ml-5 btn-instalaciones text-center" onclick="filterSelection('all')">
+                        <img class="img-button-instalaciones" src="./img/icons/picture.png" alt="Cabaña">
+                        <p class="lead text-btn-instalaciones mt-3 text-center">Mostrar Todas</p>
+                    </a>
+                    <a type='button' class="ml-5 btn-instalaciones text-center" onclick="filterSelection('cabanas')">
+                        <img class="img-button-instalaciones" src="./img/icons/cottage.png" alt="Cabaña">
                         <p class="lead text-btn-instalaciones mt-3 text-center">Cabaña</p>
                     </a>
-                    <a href="#piscina" type='button' class="ml-4 btn-instalaciones" onclick="filterSelection('pileta')">
-                        <img class="img-button-instalaciones" src="./img/icons/swimmingpool.png" alt="Piscina">
+                    <a type='button' class="ml-4 btn-instalaciones text-center" onclick="filterSelection('pileta')">
+                        <img class="img-button-instalaciones" src="./img/icons/swimming-pool.png" alt="Piscina">
                         <p class="lead text-btn-instalaciones mt-3 text-center">Piscina</p>
 
                     </a>
-                    <a type='button' class="ml-4 btn-instalaciones" onclick="filterSelection('quincho')">
-                        <img class="img-button-instalaciones" src="./img/icons/grill.png" alt="">
+                    <a type='button' class="ml-4 btn-instalaciones text-center" onclick="filterSelection('quincho')">
+                        <img class="img-button-instalaciones" src="./img/icons/Grill1.png" alt="">
                         <p class="lead text-btn-instalaciones mt-3 text-center">Qincho</p>
 
                     </a>
-                    <a href="#espaciosLibres" type='button' class="ml-4 btn-instalaciones"
-                        onclick="filterSelection('espacios')">
-                        <img class="img-button-instalaciones" src="./img/icons/relax.png" alt="">
+                    <a type='button' class="ml-4 btn-instalaciones text-center" onclick="filterSelection('espacios')">
+                        <img class="img-button-instalaciones" src="./img/icons/city.png" alt="">
                         <p class="lead text-btn-instalaciones mt-3 text-center">Espacios Libres</p>
 
                     </a>
                 </div>
             </div>
         </div>
-        <div class="especificacion card-columns d-none cabanas text-center">
+        <div class="especificacion card-columns d-none cabanas text-center mt-4">
             <div class="card text-center" style="width: 18rem;">
-                <img src="./img/icons/bedroom.png" class="card-img-top card-tumbail mt-3" alt="Dormitorio">
+                <img src="./img/icons/bedroom.png" class="card-img-top card-tumbail m-auto" alt="Dormitorio">
                 <div class="card-body">
                     <h5 class="card-title text-center">Dos Habitaciones</h5>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item text-center">Con aire acondicionado</li>
+                    <li class="list-group-item text-center">Capacidad para hasta 5 personas</li>
                     <li class="list-group-item text-center">Una cama de 2 plazas</li>
                     <li class="list-group-item text-center">2 camas individuales</li>
                     <li class="list-group-item text-center">Placard</li>
+
                 </ul>
             </div>
 
             <div class="card  text-center" style="width: 18rem;">
-                <img src="./img/icons/bathroom.png" class="card-tumbail mt-3" alt="Dormitorio">
+                <img src="./img/icons/bathroom.png" class="card-tumbail m-auto" alt="Dormitorio">
                 <div class="card-body">
                     <h5 class="card-title text-center">Baño</h5>
                 </div>
@@ -167,16 +178,16 @@
                 </ul>
             </div>
             <div class="card text-center" style="width: 18rem;">
-                <img src="./img/icons/Grill.png" class="card-img-top card-tumbail mt-3" alt="Parrilla">
+                <img src="./img/icons/Grill.png" class="card-img-top card-tumbail m-auto" alt="Parrilla">
                 <div class="card-body">
                     <h5 class="card-title text-center">Parrilla</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-center">Con utensilios</li>
+                    <li class="list-group-item text-center">Con utensilios necesarios</li>
                 </ul>
             </div>
             <div class="card text-center" style="width: 18rem;">
-                <img src="./img/icons/kitchen-1.png" class="card-tumbail mt-3" alt="Cocina">
+                <img src="./img/icons/kitchen-1.png" class="card-tumbail m-auto" alt="Cocina">
                 <div class="card-body">
                     <h5 class="card-title text-center">Cocina</h5>
                 </div>
@@ -189,7 +200,122 @@
                 </ul>
             </div>
         </div>
-        <div class="galery card-columns mt-5 text-center">
+        <div class="especificacion card-columns d-none pileta text-center mt-4">
+            <div class="card  text-center" style="width: 18rem;">
+                <img src="./img/icons/swimming-pool-kid.png" class="card-tumbail mt-3" alt="Dormitorio">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Piscina Infantil</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">Contamos con una piscina ideal para los mas chicos</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/pool.png" class="card-img-top card-tumbail mt-3" alt="Parrilla">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Piscina para adultos</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">Piscina de 17 x 9 mts</li>
+                    <li class="list-group-item text-center">Hidromasaje</li>
+                    <li class="list-group-item text-center">Isla Central</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/pool-bar.png" class="card-tumbail mt-3" alt="Cocina">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Bar en la pileta</h5>
+                </div>
+                <ul class="list-group list-group-flush mt-0">
+                    <li class="list-group-item text-center">A su disposicion para pasar con la familia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="especificacion card-columns d-none quincho text-center mt-4">
+            <div class="card  text-center" style="width: 18rem;">
+                <img src="./img/icons/dinner.png" class="card-tumbail m-auto" alt="Dormitorio">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Comedor</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">Habilitado para 40 personas</li>
+                    <li class="list-group-item text-center">Con N mesas y M sillas a su disposicion</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/Grill.png" class="card-img-top card-tumbail m-auto" alt="Parrilla">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Parrilla</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">Parrilla y Horno</li>
+                    <li class="list-group-item text-center">Herramientas para asar (pala y tenedor)</li>
+                    <li class="list-group-item text-center">Lavabo</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/freezer.png" class="card-tumbail m-auto" alt="Cocina">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Frezzer</h5>
+                </div>
+                <ul class="list-group list-group-flush mt-0">
+                    <li class="list-group-item text-center">Ponemos a su disposicion una heladera/frezzer para su
+                        comodidad</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/bar.png" class="card-tumbail m-auto" alt="Cocina">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Barra</h5>
+                </div>
+                <ul class="list-group list-group-flush mt-0">
+                    <li class="list-group-item text-center">Disponemos de Barra y sillas para su mayor comodidad a la
+                        hora de atender a sus invitados</li>
+                </ul>
+            </div>
+        </div>
+        <div class="especificacion card-columns d-none espacios text-center mt-4">
+            <div class="card  text-center" style="width: 18rem;">
+                <img src="./img/icons/bench.png" class="card-img-top card-tumbail m-auto" alt="Dormitorio">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Espacios Libres</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">Tendra un amplio espacio para disfrutar</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/hammock.png" class="card-img-top card-tumbail m-auto" alt="Parrilla">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Hamacas y Juegos</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">Hay disponibles hamacas distribuidas en el complejo</li>
+                    <li class="list-group-item text-center">Juegos infantiles</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/deck.png" class="card-tumbail m-auto" alt="Cocina">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Deck bajo el timbó</h5>
+                </div>
+                <ul class="list-group list-group-flush mt-0">
+                    <li class="list-group-item text-center">Con juego de jardin</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/voley.png" class="card-tumbail m-auto  m-auto" alt="Cocina">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Cancha de volley</h5>
+                </div>
+                <ul class="list-group list-group-flush mt-0">
+                    <li class="list-group-item text-center">Cancha de arena</li>
+                    <li class="list-group-item text-center">Pelota de volley</li>
+                    <li class="list-group-item text-center">Red</li>
+                </ul>
+            </div>
+        </div>
+        <div class="galery card-columns text-center mt-5">
             <!-- CABAÑAS -->
             <div class="card d-none cabanas">
                 <img class="card-img" src="./img/cabaña/cabana_1.jpeg" alt="Card image cap">
@@ -204,7 +330,7 @@
                 </div>
             </div>
 
-            <div class="card d-none cabanas bg-primary text-white text-center p-3">
+            <div class="card d-none cabanas bg-secondary text-center p-3">
                 <blockquote class="blockquote mb-0">
                     <p>
                         Las cabaña se encuentran equipadas con lo que necesitará para disfrutar su estadia comodamente.
@@ -254,7 +380,7 @@
             <div class="card d-none pileta">
                 <img class="card-img" src="./img/piletas/Pileta_7.png" alt="Card image cap">
             </div>
-            <div class="card d-none pileta p-3 text-center">
+            <div class="card d-none pileta p-3 text-center bg-secondary">
                 <blockquote class="blockquote mb-0">
                     <p>Disfrutará de un descanso junto a la piscina</p>
                 </blockquote>
@@ -313,16 +439,164 @@
                 <img class="card-img" src="./img/espacios_verdes/espaciosVerdes_4.jpeg" alt="Card image cap">
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid location-info mt-5">
             <div class="row">
+                <div class="col-md-6 col-sm-12 align-self-center p-5">
+                    <div class="text-center">
+                        <img src="./img/icons/location.png" alt="" class="locator-image">
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <h5 class="display-4 text-center">¿Cómo llegar?</h5>
+                    <p class="text-justify mx-5 lead">Estamos ubicado en la localidad de Paso de la Patria
+                        distante a 35 km. de la ciudad de Corrientes Capital.
+                        <br>
+                        Nuestro complejo esta ubicado en un lugar privilegiado
+                        por la naturaleza cerca de todo.
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12 mapa">
+                    <div id="mapid"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid mt-4">
+            <div class="row text-center">
                 <div class="col">
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A minus consectetur libero, quod,
-                        accusantium dicta maiores beatae aliquam facere amet eaque veniam ducimus. Architecto,
-                        consectetur delectus amet cupiditate omnis quam.</p>
+                    <h5 class="display-4">
+                        Más Información
+                    </h5>
                 </div>
             </div>
         </div>
+        <div class="more-information card-columns cabanas text-center mt-4 mb-4">
 
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/arrive.png" class="card-img-top card-tumbail m-auto" alt="Dormitorio">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Ingreso</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">El ingreso al complejo se realiza a partir de las 14hs del
+                        dia de reserva</li>
+                    <li class="list-group-item text-center">Solicitamos a nuestros inquilinos que nos avisen previo al
+                        arribo</li>
+
+                </ul>
+            </div>
+
+            <div class="card  text-center" style="width: 18rem;">
+                <img src="./img/icons/getout.png" class="card-tumbail m-auto" alt="Dormitorio">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Salida</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">La salida del complejo se realiza a partir de las 10hs</li>
+                    <li class="list-group-item text-center">El ingreso y la salida pueden ser tratados al momento de la
+                        reserva.</li>
+
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/furniture-and-household.png" class="card-img-top card-tumbail m-auto"
+                    alt="Parrilla">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Ropa de Cama</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-center">El servicio de ropa de cama tiene un cargo extra. Consultar
+                        previo al momento de la reserva</li>
+                </ul>
+            </div>
+            <div class="card text-center" style="width: 18rem;">
+                <img src="./img/icons/pay.png" class="card-tumbail m-auto" alt="Cocina">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Metodo de Pago</h5>
+                </div>
+                <ul class="list-group list-group-flush mt-0">
+                    <li class="list-group-item text-center">Recibimos pagos en efectivos y transferencia bancaria</li>
+                </ul>
+            </div>
+        </div>
+        <div style="color: red; text-align: center;">preguntas frecuentes</div>
+        <div class="container-fluid" id="contact">
+            <div class="row">
+                <div class="col col-md-4 d-none d-lg-block image-contact">
+                </div>
+                <div class="col col-md-8 col-sm-12 text-center info-contact">
+                    <h5 class="display-4">Contactate con nosotros</h5>
+                    <p class="lead">
+                        Para mas informacion podes contactarte directamente con nosotros al
+                    </p>
+                    <div class="row row-cols-2">
+                        <div class="col mb-4">
+                            <div class="card ">
+                                <img src="./img/icons/whatsapp2.png" class="card-tumbail m-auto" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Telefonos de contacto</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item text-center">
+                                            (+54) 9 3794 607433
+                                        </li>
+                                        <li class="list-group-item text-center">
+                                            (+54) 9 3782 401846
+                                        </li>
+                                        <li class="list-group-item text-center">
+                                            Recibimos tambien mensajes de WhatsApp
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card ">
+                                <img src="./img/icons/at2.png" class="card-tumbail m-auto" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Correo Electronico</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item text-center">
+                                            cabanasnasaindy@hotmail.com
+                                        </li>
+                                        <li class="list-group-item text-center">
+                                            nasaindycabanas@gmail.com
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="lead">
+                        También podes encontrarnos en:
+                    </p>
+                    <div class="row row-cols-3 mt-5">
+                        <div class="col mb-4">
+                            <div class="card ">
+                                <a href="https://www.facebook.com/cabanas.nasaindy.7" target="_blank">
+                                    <img src="./img/icons/facebook2.png" class="card-tumbail m-auto" alt="...">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card ">
+                                <a href="https://www.instagram.com/nasaindycabanas" target="_blank">
+                                    <img src="./img/icons/instagram2.png" class="card-tumbail m-auto" alt="...">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col mb-4">
+                            <div class="card ">
+                                <a href="https://www.airbnb.com.ar/users/show/325301948" target="_blank">
+                                    <img src="./img/icons/airbnb2.png" class="card-tumbail m-auto" alt="...">
+                                </a>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="./js/main.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -333,6 +607,17 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+        <script>
+            var mymap = L.map('mapid').setView([-27.331497, -58.576956], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(mymap);
+
+            L.marker([-27.331497, -58.576956]).addTo(mymap)
+                .bindPopup('Cabañas Ñasaindy')
+                .openPopup();
+        </script>
     </body>
 
 </html>
