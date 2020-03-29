@@ -5,12 +5,15 @@ html, body {
     min-width: 100vh;
     width: 100%;
 }
+
 .bg-primary {
     background-color: #6b48ff !important;
 }
+
 .bg-secondary {
-    background-color: #1ee3cf !important;
+    background-color: #0d3f67 !important;
 }
+
 #mapid {
     width: auto;
     height: 100%;
@@ -19,26 +22,38 @@ html, body {
 }
 
 .row-navbar {
-    background-color: #0d3f67;
+    background-color: rgba(65, 60, 105, 0.6);
 }
 
 .navbar a {
     color: white;
 }
 
-.jumbotron-bg {
-    height: 90%;
+.paralux {
     background: url(../img/pileta.png) no-repeat;
+    height: 100%;
+    background-attachment: fixed;
     background-size: cover;
     color: white;
 }
 
-.content-align {
-    margin-top: 20%;
+@media (max-device-width: 700px) {
+    .paralux {
+        background-attachment: scroll;
+    }
 }
 
-.carousel-caption {
-    background: linear-gradient(rgba(102, 102, 255, .7), rgba(102, 153, 153, .5));
+.jumbotron {
+    background-color: transparent;
+}
+
+.call-to-action {
+    background-color: #1ee3cf;
+    box-shadow: 5px 5px 4px rgba(65, 60, 105, 0.6);
+
+}
+.content-align {
+    margin-top: 20%;
 }
 
 .jumbotron-info {
@@ -46,28 +61,23 @@ html, body {
     color: white;
 }
 
-.container-img {
-    background: url(../img/fondo.png);
-    color: white;
-}
-
 .img-button-instalaciones {
-    min-height: 5em;
+    min-height: 2em;
     min-width: auto;
-    max-height: 10em;
+    max-height: 7em;
     max-width: auto;
-    height: 5em;
+    height: 2em;
 }
 
-/* kdlsk */
-
-.text-btn-instalaciones {
-    color: white;
+.btn-instalaciones {
+    background-color: #6b48ff;
+    /* box-shadow: 10px 10px 8px #0d3f67; */
 }
 
 .btn-instalaciones:hover {
     transform: scale(1.2);
     text-decoration: none;
+    background-color: #1ee3cf !important;
 }
 
 .card-img-overlay {
@@ -89,10 +99,7 @@ html, body {
         -moz-column-count: 3;
         column-count: 3;
     }
-    .especificacion.card-columns.quincho,
-     .especificacion.card-columns.espacios,
-     .especificacion.card-columns.cabanas,
-     .more-information {
+    .especificacion.card-columns.quincho, .especificacion.card-columns.espacios, .especificacion.card-columns.cabanas, .more-information {
         -webkit-column-count: 4;
         -moz-column-count: 4;
         column-count: 4;
@@ -101,8 +108,10 @@ html, body {
 
 @media (max-width: 768px) {
     .galery.card-columns, .especificacion.card-columns.cabanas, 
-    .especificacion.card-columns.pileta, .especificacion.card-columns.quincho, 
-    .especificacion.card-columns.espacios,.more-information.card-columns {
+    .especificacion.card-columns.pileta, 
+    .especificacion.card-columns.quincho, 
+    .especificacion.card-columns.espacios, 
+    .more-information.card-columns {
         -webkit-column-count: 2;
         -moz-column-count: 2;
         column-count: 2;
@@ -118,12 +127,10 @@ html, body {
 }
 
 .card .image {
-    background-color: red;
     border-radius: 50%;
 }
 
-.especificacion .list-group-item, .more-information .list-group-item,
-.info-contact .card, .info-contact .list-group-item {
+.especificacion .list-group-item, .more-information .list-group-item, .info-contact .card, .info-contact .list-group-item {
     border: none;
     padding: 0px;
 }
@@ -132,11 +139,12 @@ html, body {
     background-color: #6b48ff;
     color: white;
 }
-.info-contact {
-    background-color: #1ee3cf;
+
+.card-contact-img {
+    min-height: 4em;
+    height: 4em;
+    width: auto;
 }
-
-
 
 .location-info .mapa {
     padding: 0;
@@ -152,8 +160,26 @@ html, body {
     background-size: cover;
 }
 
-
 .info-contact .card, .info-contact .list-group-item {
     background-color: transparent;
-    
+}
+
+.footer-img {
+    min-height: 1.7em;
+    height: 1.7em;
+    width: auto;
+}
+
+.references {
+    font-size: 0.5em;
+    color: grey;
+}
+
+.credits {
+    font-size: 0.5em;
+}
+
+.bg-multiCollapse {
+    background-color: rgba(65, 60, 105, 0.6);
+    color: white;
 }
